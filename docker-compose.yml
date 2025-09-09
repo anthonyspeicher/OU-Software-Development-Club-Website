@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: ousdwebsite_db
+    restart: always
+    environment:
+      POSTGRES_DB: ousdsite_db
+      POSTGRES_USER: whitehat
+      POSTGRES_PASSWORD: WEB_SLINGER_HQ
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
